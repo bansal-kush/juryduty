@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "title": "The Strawberries Incident",
+    "description": "My girlfriend bought a pack of rare, expensive strawberries. I ate the biggest one without asking because it looked delicious. Now she isn't speaking to me and says I have no respect for her boundaries. Am I the jerk?",
+    "category": "relationships",
+    "guilty_votes": 342,
+    "not_guilty_votes": 56,
+    "punishment": "Buy her three boxes of organic strawberries and apologize in writing."
+  },
+  {
+    "id": 2,
+    "title": "The Leftover Pizza",
+    "description": "My roommate ate my leftover gourmet pizza that I specifically labeled with my name. In revenge, I hid his car keys for 2 hours, making him late for a doctor's appointment. Am I the jerk?",
+    "category": "roommates",
+    "guilty_votes": 128,
+    "not_guilty_votes": 243,
+    "punishment": "Clean the kitchen for two weeks and pay for his next pizza."
+  },
+  {
+    "id": 3,
+    "title": "The Birthday Gift",
+    "description": "I bought my boyfriend a high-end gym membership for his birthday. He got offended and thinks I am calling him out-of-shape. I was just trying to support his fitness goals. Am I the jerk?",
+    "category": "dating",
+    "guilty_votes": 412,
+    "not_guilty_votes": 89,
+    "punishment": "Cancel the membership and buy him a nice video game instead."
+  },
+  {
+    "id": 4,
+    "title": "The 5 AM Alarm",
+    "description": "My roommate sets 5 alarms starting at 5:00 AM but sleeps through all of them, waking me up instead. Out of frustration, I threw her alarm clock out the window this morning. Am I the jerk?",
+    "category": "roommates",
+    "guilty_votes": 89,
+    "not_guilty_votes": 530,
+    "punishment": "Buy her a new alarm clock, but demand she uses a vibrating smartwatch instead."
+  },
+  {
+    "id": 5,
+    "title": "The No-Kids Wedding",
+    "description": "I am hosting a strict no-kids wedding. My sister says she won't attend if she can't bring her toddlers. I told her I will miss her there. My family says I am being selfish. Am I the jerk?",
+    "category": "family",
+    "guilty_votes": 78,
+    "not_guilty_votes": 612,
+    "punishment": "Stand your ground, but send her a nice dinner delivery on the wedding night."
+  },
+  {
+    "id": 6,
+    "title": "The Office Thermostat",
+    "description": "My coworker keeps turning the office AC down to 18°C (64°F) because he 'sweats easily'. I am freezing, so I hid the AC remote control in my drawer. Now the office is a heated debate. Am I the jerk?",
+    "category": "workplace",
+    "guilty_votes": 204,
+    "not_guilty_votes": 185,
+    "punishment": "Wear a cozy sweater, but make him buy you a hot coffee every morning."
+  },
+  {
+    "id": 7,
+    "title": "The Dog Makeover",
+    "description": "My partner went out of town and left their fluffy dog with me. The dog got muddy, so I shaved it. It looks like a completely different dog now, and my partner is crying. Am I the jerk?",
+    "category": "dating",
+    "guilty_votes": 490,
+    "not_guilty_votes": 32,
+    "punishment": "Pay for a professional dog sweater and never touch the grooming clippers again."
+  },
+  {
+    "id": 8,
+    "title": "Stealing the Baby Name",
+    "description": "My cousin announced she wants to name her baby 'Aria'. I am pregnant too and due earlier, and I went ahead and named my baby Aria first. My cousin is furious and wants me to change it. Am I the jerk?",
+    "category": "family",
+    "guilty_votes": 315,
+    "not_guilty_votes": 294,
+    "punishment": "You got there first, but you owe her a baby shower gift of her choice."
+  },
+  {
+    "id": 9,
+    "title": "The Ghosting Partner",
+    "description": "My group project partner didn't contribute a single slide for our final presentation. I removed his name from the submission slides 5 minutes before presenting, causing him to fail. Am I the jerk?",
+    "category": "workplace",
+    "guilty_votes": 25,
+    "not_guilty_votes": 718,
+    "punishment": "Entirely justified. Celebrate your grade with some pizza."
+  },
+  {
+    "id": 10,
+    "title": "The Airplane Recline",
+    "description": "I reclined my seat on a 10-hour flight. The man behind me kept kicking my seat and saying he had no legroom. I refused to upright my seat. Am I the jerk?",
+    "category": "travel",
+    "guilty_votes": 389,
+    "not_guilty_votes": 305,
+    "punishment": "Reclining is your right, but buy him a drink to soften the blow."
+  }
+]

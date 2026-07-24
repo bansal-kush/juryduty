@@ -1,0 +1,17 @@
+/* Reset and Base Styles for JuryDuty */
+html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 100vh;
+}
