@@ -605,33 +605,33 @@ function App() {
               </div>
             ) : (
               /* Share / Next logic when solved */
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <button 
-                  className="gavel-btn not-guilty"
-                  onClick={() => {
-                    const text = `I judged "${selectedCase.title}" on JuryDuty! ${getPercentages(selectedCase).guilty}% voted GUILTY. What's your verdict?`;
-                    window.open(`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`);
-                  }}
-                >
-                  SHARE VERDICT CARD
-                </button>
-                
-                <div className="menu-controls">
-                  <button 
-                    className="action-btn"
-                    onClick={() => { setView('home'); setIsJudgeMode(false); }}
-                  >
-                    GO TO FEED
-                  </button>
-                  {isJudgeMode && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', width: '100%' }}>
+                {isJudgeMode ? (
+                  <div style={{ display: 'flex', gap: '12px', width: '100%' }}>
                     <button 
-                      className="action-btn primary"
+                      className="gavel-btn not-guilty"
+                      style={{ flex: 1 }}
+                      onClick={() => { setView('home'); setIsJudgeMode(false); }}
+                    >
+                      [ FEED ]
+                    </button>
+                    <button 
+                      className="gavel-btn guilty"
+                      style={{ flex: 1 }}
                       onClick={loadNextJudgeCase}
                     >
-                      NEXT CASE &gt;
+                      [ NEXT ]
                     </button>
-                  )}
-                </div>
+                  </div>
+                ) : (
+                  <button 
+                    className="gavel-btn not-guilty"
+                    style={{ width: '100%' }}
+                    onClick={() => { setView('home'); setIsJudgeMode(false); }}
+                  >
+                    [ RETURN TO FEED ]
+                  </button>
+                )}
               </div>
             )}
           </div>
