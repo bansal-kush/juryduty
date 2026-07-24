@@ -75,6 +75,7 @@ function App() {
   const [view, setView] = useState('home');
   const [cases, setCases] = useState([]);
   const [votedCaseIds, setVotedCaseIds] = useState([]);
+  const [submittedCaseIds, setSubmittedCaseIds] = useState([]);
   const [selectedCase, setSelectedCase] = useState(null);
   const [isJudgeMode, setIsJudgeMode] = useState(false);
   const [filter, setFilter] = useState('all');
@@ -94,6 +95,11 @@ function App() {
     const savedVotes = localStorage.getItem('juryduty_votes');
     const parsedVotes = savedVotes ? JSON.parse(savedVotes) : [];
     setVotedCaseIds(parsedVotes);
+
+    // 1b. Get submitted case IDs
+    const savedSubmissions = localStorage.getItem('juryduty_submissions');
+    const parsedSubmissions = savedSubmissions ? JSON.parse(savedSubmissions) : [];
+    setSubmittedCaseIds(parsedSubmissions);
 
     // 2. Fetch cases from Supabase
     const fetchCases = async () => {
@@ -252,6 +258,8 @@ function App() {
       punishment: formPunishment
     };
 
+    let submittedId = null;
+
     try {
       const { data, error } = await supabase
         .from('cases')
@@ -263,6 +271,7 @@ function App() {
       
       if (data) {
         setCases(prev => [data, ...prev]);
+        submittedId = data.id;
       }
     } catch (err) {
       console.error("Error submitting case to Supabase:", err);
@@ -273,6 +282,13 @@ function App() {
       const newLocalCasesList = [fallbackCase, ...parsedLocalCases];
       localStorage.setItem('juryduty_local_cases', JSON.stringify(newLocalCasesList));
       setCases([fallbackCase, ...cases]);
+      submittedId = fallbackCase.id;
+    }
+
+    if (submittedId) {
+      const newSubmissions = [submittedId, ...submittedCaseIds];
+      setSubmittedCaseIds(newSubmissions);
+      localStorage.setItem('juryduty_submissions', JSON.stringify(newSubmissions));
     }
     
     // Clear inputs
@@ -288,7 +304,9 @@ function App() {
   // Filter and search logic
   const filteredCases = cases.filter(c => {
     const matchesCategory = filter === 'all' || 
-      (filter === 'trending' ? true : c.category === filter);
+      (filter === 'trending' ? true : 
+       filter === 'my cases' ? submittedCaseIds.includes(c.id) : 
+       c.category === filter);
     
     const matchesSearch = c.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
       c.description.toLowerCase().includes(searchTerm.toLowerCase());
@@ -366,7 +384,7 @@ function App() {
 
           {/* Category Filter Tabs */}
           <div className="category-tabs">
-            {['all', 'trending', 'relationships', 'roommates', 'dating', 'family', 'workplace'].map(cat => (
+            {['all', 'trending', 'my cases', 'relationships', 'roommates', 'dating', 'family', 'workplace'].map(cat => (
               <button 
                 key={cat} 
                 className={`tab-btn ${filter === cat ? 'active' : ''}`}
